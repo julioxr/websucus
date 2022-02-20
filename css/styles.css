@@ -1,0 +1,368 @@
+@import url(variables.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    list-style: none;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+}
+
+
+#bg{
+    background-image: url(/img/fondo_cemento.png.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* BACKGROUND SECCIONES */
+
+#home{
+    background: var(--greenVintageOp);
+    background-image: url(/img/plant\ siluette\ 3.svg);
+    background-size: cover;
+    background-position: -6rem 4rem;
+}
+#features{
+    background: var(--oldPinkOp);
+}
+#type{
+    background: var(--greyOp); 
+}
+#care{
+    background: var(--oliveOp);
+}
+#tips{
+    background: var(--creamOp);
+}
+#features, #care{
+    background-image: url(/img/plant\ siluette.svg);
+    background-size: 120%;
+    background-position: -5rem 23rem;
+}
+#type, #tips{
+    background-image: url(/img/plant\ siluette\ 2.svg);
+    background-size: 100%;
+    background-position: 3rem -4rem;
+}
+#home, #features, #type, #care, #tips{
+    background-blend-mode:lighten;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+h1, h2, h3, h4, h5 {
+    font-weight: var(--title-fw);
+}
+/* ///////////////// tipografias movil //////////////////// */
+h1{
+    font-family: var(--titleFamily);
+    font-size: var(--h1-movil);
+}
+h3{
+    font-size:var(--h3-movil);
+}
+h4{
+    font-size: var(--h4-movil);
+}
+p{
+    font-size: var(--p-movil);
+    line-height: 21px;
+    font-weight: var(--p-fw);
+}
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+/*NAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV*/
+nav{
+    position: fixed;
+    display: grid;
+    padding: 2rem;
+    margin: auto;
+    justify-items: center;
+    grid: none / auto , 1fr;
+    width: 100%;
+    transition: .4s;
+}
+.nav__toggle, .logo{
+    justify-self: left;
+ }
+.logo{
+    grid-column:2;
+    width: 180px;
+}
+/* /// MENU MOVIL /// */
+.bx-menu , .bx-x{
+   font-size: 4rem;
+   grid-column: 1;
+   cursor: pointer;
+}
+.nav__menu , .menu{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    letter-spacing: .5px;
+    text-align: center;
+}
+.nav__menu{  
+    position: fixed;
+    display: none;
+    width: 90%;
+    height: 100vh;
+    left: -150%;
+    background:var(--green);
+    padding: 7rem;
+    transition: .4s ease-in;
+    z-index: 1000;
+    font-weight: var(--bold-fw);
+}
+.show-menu{
+    left: 0;
+    display: flex;
+}
+.menu:before{
+ content: url(/img/sucus\ garden\ logo.svg);
+ width: 13rem;
+ align-self: center;
+}
+
+li{ 
+    transform: scale(1);
+    cursor: pointer;
+}
+li a span{
+    width: auto;
+    padding: 1rem;
+}
+li:hover{
+    font-weight: 700;
+    transform: scale(1.1);
+    transition: ease-in .1s;
+}
+span:active{
+    color: var(--green);
+}
+span:focus-visible{
+    color: var(--green);
+    font-weight: 700;
+}
+#arrowUp{
+    z-index: 1000;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    color: #fff;
+    opacity: .7;
+    font-size:3.5rem;
+}
+
+/* //// SECTIONS  //// */ 
+
+.section, .section__content{
+    width: 100vw;
+    height: 100vh;
+}
+.section{
+    scroll-snap-align: start;
+    overflow-x: hidden;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.section__content{
+    display: grid;
+    grid: 1fr 1fr / 1fr;
+    padding: 3em;
+    align-items: end;
+    margin-top: 5.5rem;
+}
+.text__container{
+    grid-column: 1;
+    grid-row: 1;
+}
+.titles__type p{
+    margin-top: 1rem;
+}
+.container__img__section{
+    grid: 1fr / 1fr;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    grid: 2 / 1;
+    height: auto;
+}
+.plant{
+    display: grid;
+    justify-content: space-between;
+    grid: repeat(2, 1fr) / repeat(3, 1fr);
+}
+.img__container__shape{
+    grid: 1 / 1;
+    align-self: center;
+    background: var(--grey);
+    display: flex;
+    justify-content: center;
+    width: 18em;
+    height: 17em;
+    justify-self: center;
+    border-radius: 60% 100% 75% 70% / 100% 100% 75% 70% ;
+}
+.section__type img{
+    width: 10em;
+    transform: translate(0px,0px);
+    grid: 1 / 2;
+    align-self: bottom;
+}
+
+.plant .bx{
+    font-size: 5rem;
+    color: var(--oldPink);
+    align-self: center;
+}
+/* ----------------------------- */
+/* ///////// TABLET /////////// */
+@media(min-width: 600px) and (max-width: 1099px){
+    #type{
+        background-color: tomato;
+    }
+    .section__content{
+        margin-top: 1rem;
+    }
+    .img__container__shape{
+        width: 20em;
+        height: 19em;
+    }
+    .section__type .img__container__shape img{
+        width: 19em;  
+    }
+    .container__img__section{
+        width: 100%;
+        background-color: antiquewhite;
+    }
+    .plant{
+        background-color: yellowgreen;
+        justify-content: space-between;
+        grid: repeat(2, 1fr) / repeat(3, 1fr);
+    }
+}
+
+/* ///////////////////////////////////////// DESKTOP ///////////////////////////////////////////// */
+
+@media(min-width:1100px){
+    h1{
+        font-size: var(--h1-desktop);
+    }
+    h2{
+        font-size: var(--h2-desktop);
+    }
+    h3{
+        font-size: var(--h3-desktop);
+    }
+    h4{
+        font-size: var(--h4-desktop);
+    }
+
+    nav{
+        width: 100%;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .logo{
+        grid-column: 1/2;
+        width: 200px;
+        justify-self: center;
+    }
+    .bx-menu, #nav-close{
+        display: none;
+    }
+    nav{
+        align-items: center;
+    }
+    .nav__menu{  
+        display: block;
+        height: auto;
+        width: auto;
+        grid-column: 2/4;
+        position: relative;
+        left: 0%;
+        background: none;
+        padding: 1rem;
+    }
+   .menu{
+       flex-direction: row;
+       justify-content: space-between;
+       gap: 6rem;
+    }
+    
+    .menu:before{
+     display: none;
+    }
+    .menu::after{
+        display: none;
+    }
+
+/* BACKGROUND SECCIONES */
+
+#home{
+    background-position:-5rem -2rem;
+}
+#features, #care{
+    background-image: url(/img/plant\ siluette.svg);
+    background-size: contain;
+    background-position:-5rem 5rem;
+}
+#type, #tips{
+    background-image: url(/img/plant\ siluette\ 2.svg);
+    background-size: contain;
+    background-position: 48rem -3rem;
+}
+#home, #features, #type, #care, #tips{
+    background-blend-mode:lighten;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+/* ////// SECTION ////// */
+    .section__content{
+        grid: 1fr / 1fr 55rem;
+        margin-top: 5.5rem;
+        height: auto;
+    }
+    .text__container{
+        grid: 1 / 1;
+        text-align: right;
+        display: grid;
+        justify-self: right;
+        align-self: center;
+    }
+    .titles__type{
+        width: 24rem;
+    }
+    .container__img__section{
+        background-color: antiquewhite;
+        grid: 1 / 2;
+        align-items: center;
+        justify-items: center;
+    }
+    .img__container__shape{
+        z-index: 1;
+        position: relative;
+        width: 40rem;
+        height: 34.5rem;
+        border-radius: 60% 100% 75% 70% / 100% 100% 75% 70% ;
+    }
+    .section__type .img__container__shape img{
+        width: 25em;
+        transform: translate(0px,0px);
+        grid: 1 / 2;
+        align-self: bottom;
+    }
+
+}
+
+

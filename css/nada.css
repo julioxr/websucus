@@ -1,0 +1,878 @@
+@import url(variables.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    list-style: none;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+}
+
+
+#bg{
+    background-image: url(/img/fondo_cemento.png.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* BACKGROUND SECCIONES */
+
+#home{
+    background: var(--greenVintageOp);
+    background-image: url(/img/plant\ siluette\ 3.svg);
+    background-size: cover;
+    background-position: -6rem 4rem;
+}
+#features{
+    background: var(--oldPinkOp);
+}
+#type{
+    background: var(--greyOp); 
+}
+#care{
+    background: var(--oliveOp);
+}
+#tips{
+    background: var(--creamOp);
+}
+#features, #care{
+    background-image: url(/img/plant\ siluette.svg);
+    background-size: 120%;
+    background-position: -5rem 23rem;
+}
+#type, #tips{
+    background-image: url(/img/plant\ siluette\ 2.svg);
+    background-size: 100%;
+    background-position: 3rem -4rem;
+}
+#home, #features, #type, #care, #tips{
+    background-blend-mode:lighten;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+h1, h2, h3, h4, h5 {
+    font-weight: var(--title-fw);
+}
+/* tipografias movil*/
+h1{
+    font-family: var(--titleFamily);
+    font-size: var(--h1-movil);
+}
+h3{
+    font-size:var(--h3-movil);
+}
+h4{
+    font-size: var(--h4-movil);
+}
+p{
+    font-size: var(--p-movil);
+    line-height: 21px;
+    font-weight: var(--p-fw);
+}
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav{
+    display: grid;
+    padding: 2rem;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    position: fixed;
+    width: 100%s;
+    transition: .4s; 
+}
+.logo{
+    margin: auto;
+    grid-column:2;
+    grid-auto-flow: row;
+    width: 180px;
+    
+}
+/* /// MENU MOVIL /// */
+.bx-menu{
+   font-size: 4rem;
+   grid-column: 1;
+   
+
+}
+.menu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 7rem;
+    align-items: center;
+    gap: 2rem;
+    font-weight: var(--bold-fw);
+    letter-spacing: .5px;
+    background:var(--green);
+    z-index: 1000;
+    display: none;
+    /* left: -150%; */
+}
+.menu:before{
+ content: url(/img/sucus\ garden\ logo.svg);
+ width: 200px;
+}
+.menu::after{
+    content: 'X';
+    font-size: 50px;
+}
+
+li{ 
+    transform: scale(1);
+    cursor: pointer;
+}
+li a span{
+    width: auto;
+    padding: 1rem;
+}
+li:hover{
+    font-weight: 700;
+    transform: scale(1.1);
+    transition: ease-in .1s;
+}
+span:active{
+    color: var(--green);
+}
+span:focus-visible{
+    color: var(--green);
+    font-weight: 700;
+}
+#arrowUp{
+    z-index: 1000;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    color: #fff;
+    opacity: .7;
+    font-size:3.5rem;
+}
+/* //// SECTIONS  //// */ 
+
+.section{
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.section__content{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    padding: 9rem 2rem;
+    align-items: start;
+    text-align: right;
+    background-color: aqua;
+} 
+.text__container{
+    display: grid;
+    background-color: brown;
+}
+
+/*////// SECTION HOME /////// */
+
+.content__home{
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+}
+.section__home{
+    grid-row: 1fr 1fr;
+}
+.title{
+    grid-column: 1/4;
+    grid-row: 1;
+}
+.subtitle{
+    grid-column: 1/4;
+    grid-row: 2;
+}
+.text{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr;
+    align-items: center;
+}
+.section__home .text p{
+    grid-column: 1;
+    padding-right: .5rem;
+} 
+ .section__home .llave{
+    grid-column: 2;
+    opacity: .3;
+    height: 20em;
+} 
+
+/* IMAGEN */
+.img__container__shape{
+    z-index: 1;
+    position: relative;
+    grid-column: 1;
+    grid-row: 2;
+    /* width: 18.75em;
+    height:17em; */
+    background: var(--light);
+    border-radius: 60% 100% 75% 70% / 100% 100% 75% 70% ;
+}
+.img__container__shape img{
+    z-index: 10;
+    /* width: 18.75em; */
+}
+/* fin seccion home */
+
+/*----------------------------------*/
+
+
+/* ----------------------------- */
+
+/* //////////////// DESKTOP //////////////////////// */
+@media (min-width: 1250px){
+    
+}
+
+
+@media(min-width:1400px){
+
+    h1{
+        font-size: var(--h1-desktop);
+    }
+    h2{
+        font-size: var(--h2-desktop);
+    }
+    h3{
+        font-size: var(--h3-desktop);
+    }
+    h4{
+        font-size: var(--h4-desktop);
+    }
+
+    nav{
+        padding: 2rem 7rem;
+        width: 100%;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .logo{
+        grid-column: 1/2;
+        width: 200px;
+        align-self: center;
+        justify-self: left;
+    }
+    .bx-menu{
+        display: none;
+    }
+    .menu{
+        display:flex;
+        justify-content: space-between;
+        flex-direction: row;
+        height: auto;
+        gap: 6rem;
+        grid-column: 2/4;
+        font-weight: var(--title-fw);
+        background:none;
+        align-self: center;
+    } 
+    .menu:before{
+     display: none;
+    }
+    .menu::after{
+        display: none;
+    }
+
+    /*----------------------------------*/
+
+/* BACKGROUND SECCIONES */
+
+#home{
+    background-position:-5rem -2rem;
+}
+#features, #care{
+    background-image: url(/img/plant\ siluette.svg);
+    background-size: contain;
+    background-position:-5rem 5rem;
+}
+#type, #tips{
+    background-image: url(/img/plant\ siluette\ 2.svg);
+    background-size: contain;
+    background-position: 48rem -3rem;
+}
+#home, #features, #type, #care, #tips{
+    background-blend-mode:lighten;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+    /*SECTIONS*/
+    
+    .section__content{
+        grid-template-columns: 40rem 40rem;
+        grid-row: 1fr;
+        /* margin-left: 5rem; */
+        background-color: blueviolet;
+    }
+         
+    .content__home{
+        grid-template-rows: repeat(3,auto);
+    }
+   
+    .text{
+        width: 100%;
+        display: grid;
+        padding-right: 5rem;
+        padding-top: 2rem;
+    }
+    .text p{
+        grid-column: 1;
+        padding: 0rem 6rem;
+    } 
+     .text .llave{
+        grid-column: 2;
+        opacity: .3;
+        height: auto;
+    } 
+    /* IMAGEN */
+    .img__container__shape{
+        z-index: 1;
+        position: relative;
+        grid-column: 2;
+        grid-row: 1;
+        width: 38rem;
+        height: 34rem;
+        background: var(--light);
+        border-radius: 60% 100% 75% 70% / 100% 100% 75% 70% ;
+    }
+    .img__container__shape img{
+        width: 35rem;
+        transform: translate(6rem, -3rem);
+        z-index: 10;
+    }
+/* fin seccion home */
+
+
+/* ////////////// SECTION CARES /////////////// */
+
+.section__care{
+    height: 730px;
+    grid-template-columns: 1fr repeat(2, 290px);
+    grid-template-rows: 250px 250px;
+}
+
+.titles__care{
+    grid-column: 1;
+    grid-row: 1/3;
+    align-self: center;
+    margin-left: 0;
+    justify-content: center;
+}
+
+.riego{
+    grid-row: 1;
+    grid-column: 2/4;
+}
+.iluminacion{
+    grid-row: 2;
+    grid-column: 2;
+    align-self: flex-start;
+}
+.sustrato{
+    grid-column: 3;
+    grid-row: 2;
+    align-self: flex-start;
+}
+}
+
+/*mas perdida que la miercole*/
+/* -------------------------------*/
+
+
+
+@import url(variables.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    list-style: none;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+}
+
+#bg{
+    background-image: url(/img/fondo_cemento.png.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1, h2, h3, h4, h5 {
+    font-weight: var(--title-fw);
+}
+/* tipografias movil*/
+h1{
+    font-family: var(--titleFamily);
+    font-size: var(--h1-movil);
+}
+h3{
+    font-size:var(--h3-movil);
+}
+h4{
+    font-size: var(--h4-movil);
+}
+p{
+    font-size: var(--p-movil);
+    line-height: 21px;
+    font-weight: var(--p-fw);
+}
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav{
+    display: grid;
+    padding: 2rem;
+    margin: auto;
+    grid-template-columns: 1fr;
+    position: fixed;
+    width: 100%;
+    transition: .4s; 
+}
+.logo{
+    grid-column: 1;
+    width: 180px;
+    align-self: center;
+    justify-self: center;
+}
+/* /// MENU MOVIL /// */
+.menu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 7rem;
+    align-items: center;
+    gap: 2rem;
+    font-weight: var(--bold-fw);
+    letter-spacing: .5px;
+    background:var(--green);
+    z-index: 1000;
+    display: none;
+    /* left: -150%; */
+}
+.menu:before{
+ content: url(/img/sucus\ garden\ logo.svg);
+ width: 200px;
+}
+.menu::after{
+    content: 'X';
+    font-size: 50px;
+}
+
+li{ 
+    transform: scale(1);
+    cursor: pointer;
+}
+li a span{
+    width: auto;
+    padding: 1rem;
+}
+li:hover{
+    font-weight: 700;
+    transform: scale(1.1);
+    transition: ease-in .1s;
+}
+span:active{
+    color: var(--green);
+}
+span:focus-visible{
+    color: var(--green);
+    font-weight: 700;
+}
+#arrowUp{
+    z-index: 1000;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    color: #fff;
+    opacity: .7;
+    font-size:3.5rem;
+}
+/* //// SECTIONS  //// */ 
+
+.section{
+    width: 100vw;
+    height: auto;
+    scroll-snap-align: start;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.section__content{
+    width: 90%;
+    height: 100%;
+    justify-content: center;
+    display: grid;
+    align-items: flex-end;
+    padding: 8rem 5rem;
+    margin: auto;
+    grid-template-columns: 1fr;
+    background: var(--green);
+}
+.text__container{
+    z-index: 100;
+    width: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: end;
+    
+}
+.text__container .title, .text__container .subtitle{
+    align-self: center;
+    text-align: right;
+}
+
+/*////// SECTION HOME /////// */
+
+.section__home{
+    grid-template-columns: 1fr;
+}
+.section__home .title{
+    grid-row: 2;
+    grid-column: 1;
+}
+.section__home .subtitle{
+    grid-row: 3;
+    grid-column: 1/2;
+}
+.section__home .text__container p{
+    text-align: right;
+    grid-row: 4;
+    grid-column: 1;
+    align-self: center;
+    padding: 12px;
+    margin-top: 6rem; 
+}
+.section__home .llave{
+    grid-row: 4;
+    grid-column: 2;
+    align-self: center;
+    margin-top: 6rem;
+    height: 18rem;
+    opacity: .6;
+}
+.titles__home{
+    grid-template-rows: 127px 84px 36px 257px 73px;
+    grid-template-columns: 1;
+} 
+/* IMAGEN */
+.img__container__shape{
+    z-index: 1;
+    position: relative;
+    grid-column: 1;
+    width: 25rem;
+    height: 25rem;
+    background: var(--light);
+    border-radius: 60% 100% 75% 70% / 100% 100% 75% 70% ;
+}
+.img__container__shape img{
+    
+    z-index: 10;
+}
+/* fin seccion home */
+
+/* //////////////// DESKTOP //////////////////////// */
+
+@media(min-width:1400px){
+    h1{
+        font-size: var(--h1-desktop);
+    }
+    h2{
+        font-size: var(--h2-desktop);
+    }
+    h3{
+        font-size: var(--h3-desktop);
+    }
+    h4{
+        font-size: var(--h4-desktop);
+    }
+
+    nav{
+        padding: 2rem 7rem;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .logo{
+        grid-column: 1;
+        width: 200px;
+        align-self: center;
+        justify-self: left;
+    }
+ 
+    .menu{
+        justify-content: space-around;
+        flex-direction: row;
+        width: 90%;
+        height: auto;
+        padding: 5rem 7rem;
+        align-items: center;
+        gap: 6rem;
+        grid-column: 2/4;
+        font-weight: var(--title-fw);
+        background:none;
+        align-self: center;
+    } 
+    .menu:before{
+     display: none;
+    }
+    .menu::after{
+        display: none;
+    }
+    
+    /*SECTIONS*/
+    .section__content{
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 5rem;
+    }
+    .section__home{
+        grid-template-columns: 500px 1fr;
+    }
+    .section__home .title{
+        grid-row: 2;
+        grid-column: 1/4;
+    }
+    .section__home .subtitle{
+        grid-row: 3;
+        grid-column: 1/4;
+        margin-top: 15px;
+    }
+    .section__home .text__container p{
+        text-align: right;
+        grid-row: 4;
+        grid-column: 1;
+        align-self: center;
+        padding: 12px;
+        margin-top: 6rem; 
+    }
+    .section__home .llave{
+        grid-row: 4;
+        grid-column: 2;
+        align-self: center;
+        margin-top: 6rem;
+        height: 18rem;
+        opacity: .6;
+    }
+    .titles__home{
+        grid-template-rows: 127px 84px 36px 257px 73px;
+        grid-template-columns: 358px 52px 84px;
+    }
+    /* IMAGEN */
+.img__container__shape{
+    z-index: 1;
+    position: relative;
+    grid-column: 4;
+    width: 38rem;
+    height: 34rem;
+    background: var(--light);
+    border-radius: 60% 100% 75% 70% / 100% 100% 75% 70% ;
+}
+.img__container__shape img{
+    transform: translate(6rem, -3rem);
+    z-index: 10;
+}
+/* fin seccion home */
+}
+
+/*----------------------------------*/
+/* BACKGROUND SECCIONES */
+
+#home{
+    background: var(--greenVintageOp);
+    background-image: url(/img/plant\ siluette\ 3.svg);
+    background-size: cover;
+    background-position:-40px 10px;
+}
+/*
+ #features{
+    background: var(--oldPinkOp);
+}
+#type{
+    background: var(--greyOp); 
+}
+#care{
+    background: var(--oliveOp);
+}
+#tips{
+    background: var(--creamOp);
+}
+#features, #care{
+    background-image: url(/img/plant\ siluette.svg);
+    background-position:-100px 50px;
+}
+#type, #tips{
+    background-image: url(/img/plant\ siluette\ 2.svg);
+    background-position: 110% -110px;
+}
+#home, #features, #type, #care, #tips{
+    background-blend-mode:lighten;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+/* ----------------------------- */
+
+/* IMAGEN */
+/* .img__container__shape{
+    z-index: 1;
+    position: relative;
+    grid-column: 4;
+    width: 38rem;
+    height: 34rem;
+    background: var(--light);
+    border-radius: 60% 100% 75% 70% / 100% 100% 75% 70% ;
+}
+.img__container__shape img{
+    transform: translate(6rem, -3rem);
+    z-index: 10;
+} */
+/* fin seccion home */
+
+/* ///////////////// FEATURES /////////////////////// */
+
+/* .section__features{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    /* grid-template-rows: 127px 84px 36px 330px; 
+    z-index: 100;
+    width: 90vw;
+    
+}
+
+.titles__features{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.columns__features{
+    grid-column: 1/4;
+    align-items: center;
+    justify-content: center;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+.text__column{
+    
+    padding: 1.5rem;
+    text-align: right;
+}
+.bp{
+    border: solid .2rem var(--babyPink);
+}
+.text__column h4{
+    line-height: 27px;
+    margin-bottom: 1rem;
+} */
+/* ////////////// SECCION TIPOS /////////////// */
+/* .section__type{
+    gap: 2rem;
+}
+.titles__type{
+    align-self: center;
+    width: 300px;
+    grid-column: 1;
+    text-align: right;
+}
+.titles__type p{
+    margin-top: 2rem;
+}
+
+.plant{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}  */
+/* .text__box:before{
+    content: '';
+    width: 0;
+    height: 0;
+    left: 70%;
+    position: absolute;
+    border-left: solid 10px transparent;
+    border-right: solid 25px transparent;
+    border-bottom: solid 50px var(--cream);
+    margin-top: -9%;
+} */
+/* .text__box{
+    grid-row: 2;
+    transform: translateY(-55px);
+    /* background: var(--cream); 
+}
+.text__box h3{
+    font-family:var(--titleFamily);
+    line-height: 50px;
+}
+
+.bx{
+    font-size: 6rem;
+    color: var(--oldPink);
+    align-self: center;
+}
+.section__type .img__container__shape{
+    background: var(--grey);
+    display: flex;
+    /* justify-content: center;
+    align-items: center; 
+}
+.section__type .img__container__shape img{
+    width: 400px;
+    transform: translate(0px,0px);
+    grid-row: 1/2;
+    align-self: bottom;
+}
+/* ////////////// SECTION CARES /////////////// */
+/*
+.section__care{
+    height: 730px;
+    grid-template-columns: 1fr repeat(2, 290px);
+    grid-template-rows: 250px 250px;
+}
+
+.titles__care{
+    grid-column: 1;
+    grid-row: 1/3;
+    align-self: center;
+    margin-left: 0;
+    justify-content: center;
+}
+
+.riego{
+    grid-row: 1;
+    grid-column: 2/4;
+}
+.iluminacion{
+    grid-row: 2;
+    grid-column: 2;
+    align-self: flex-start;
+}
+.sustrato{
+    grid-column: 3;
+    grid-row: 2;
+    align-self: flex-start;
+} */

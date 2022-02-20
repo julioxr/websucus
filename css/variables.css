@@ -1,0 +1,57 @@
+:root{
+
+/* COLORES*/
+--green: #1c2915;
+--greenVintage: #BCCEB8;
+--olive: #839690;
+--babyGreen: #ccd5c4;
+--grey: #6A6260;
+--light: #DADEE1;
+--oldPink: #E1B0A2;
+--babyPink: #EDCFC4;
+--cream: #af9d89;
+--babyCream: #ede3d9;
+
+
+/**con opacidad*/
+--greenVintageOp: #8eaa88b4;
+--oldPinkOp: #c08d7fe3;
+--oliveOp: #699285ca;
+--greyOp: #6a6260d0;
+--creamOp: #c29f78be;
+--babyPinkOp: #edcfc4d7;
+
+
+/* TIPOGRAFIAS*/
+--titleFamily: 'Playfair Display', serif;
+
+/* /// TAMANO FUENTE /// */
+/* Font Weight*/
+--p-fw:300;
+--title-fw:400;
+--bold-fw:600;
+
+/* Movil */
+--h1-movil:3.2em;
+--h2-movil:40px;
+--h3-movil:20px;
+--h4-movil:18px;
+--h5-movil:15px;
+--p-movil:14.5px;
+
+/*Desktop */
+--h1-desktop: 100px;
+--h2-desktop:50px;
+--h3-desktop:24px;
+--h4-desktop:21px;
+--h5-desktop:18px;
+--p-desktop: 15px;
+
+
+
+
+
+/*MARGIN / PADDING */
+
+
+}
